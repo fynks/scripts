@@ -4,6 +4,7 @@
 ## Javascript Scripts
 
 <details>
+  <summary>:pill:</summary>
  
  - [Search](https://github.com/aliglelo/scripts/tree/master/js%20scripts/Search)
  
