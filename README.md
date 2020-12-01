@@ -1,5 +1,5 @@
 # Scripts catalogue 
- This repo provides a simple catalogue of various `javascript` and `php` scripts.
+ This repo provides a simple catalog of various `Javascript` and `PHP` scripts.
 
 | :pill: | Javascripts                                                                               | :cyclone: | PHP                                                                                          |
 | ------ |:-----------------------------------------------------------------------------------------:|:---------:|:--------------------------------------------------------------------------------------------:|
