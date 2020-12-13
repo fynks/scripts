@@ -1,6 +1,6 @@
 # :package: Scripts catalogue
 
- This repo provides a simple catalog of various `Javascript` and `PHP` scripts.
+:arrow_right: This repo provides a simple catalog of various `Javascript` and `PHP` scripts.
 
 ### :pill: Javascript :
 - [Covid-API](https://raw.githubusercontent.com/fynks/scripts/master/js%20scripts/api/covid-api.html)
