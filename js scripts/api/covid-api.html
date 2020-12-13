@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <link rel="dns-prefetch" href="https://disease.sh/">
+    <link rel="preconnect" href="https://disease.sh/">
+    <meta charset=utf-8><title>Covid-API | Scripts</title>
+    <meta http-equiv=x-ua-compatible content=" ie=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+            <div class=covid>
+                <h2>Cases :<span href=# id=todayCases>---</span> </h2><h2> Deaths :<span href=# id=todayDeaths>---</span></h2>
+                <h2>Active :<span href=# id=active>---</span></h2>
+            </div>
+    <script>
+        let API = "https://disease.sh/v3/covid-19/countries/pakistan"
+        async function getDataOf(countryName) {
+            let URL = `${API}`;
+            console.log('fetching data from', URL);
+            let response = await fetch(URL);
+            let covidData = await response.json();
+            return await covidData;
+        }
+        async function main() {
+            let countryData = await getDataOf(countryName);
+            console.log(countryData);
+
+            function updateData(todayCases, todayDeaths, active) {
+                document.getElementById("todayCases").innerHTML = " " + todayCases;
+                document.getElementById("todayDeaths").innerHTML = " " + todayDeaths;
+                document.getElementById("active").innerHTML = " " + active;
+            }
+            if (countryData === undefined) {
+                updateData("NA", "NA", "NA");
+            } else {
+                updateData(countryData.todayCases, countryData.todayDeaths, countryData.active)
+            }
+        }
+        let countryName = "Pakistan";
+        main();
+    </script>
+</body>
+
+</html>

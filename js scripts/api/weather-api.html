@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang=en>
+<head>
+<link rel="dns-prefetch" href="https://disease.sh/">
+<link rel="preconnect" href="https://disease.sh/">
+<meta charset=utf-8>
+<title>Weather-API | Scripts</title>
+<meta http-equiv=x-ua-compatible content=" ie=edge">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<style>*{ box-sizing:border-box; text-align:center; font-weight:100;} </style>
+</head>
+<body>
+<div class=card>
+<h1 id="temp"></h1>
+<h3 id="description"></h3>
+</div>
+
+    <!-- 
+ 1.You need an API key first of all from here : https://home.openweathermap.org/users/sign_up
+ 2.Add city ID in the last line in `weatherBallon(enter_city_id_here)'
+ 3.This only supports displaying current weather
+-->
+    <script>
+        const key = '';
+
+        function weatherBallon(cityID) {
+            fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key + '&units=metric')
+                .then(function (resp) {
+                    return resp.json()
+                }).then(function (data) {
+                    drawWeather(data);
+                }).catch(function () {});
+        }
+
+        function drawWeather(d) {
+            var description = d.weather[0].description;
+            var temp = Math.round(d.main.temp);
+            document.getElementById('description').innerHTML = description;
+            document.getElementById('temp').innerHTML = temp + '&deg;';
+            if (description.indexOf('rain') > 0) {
+                document.body.className = 'rainy';
+            } else if (description.indexOf('cloud') > 0) {
+                document.body.className = 'cloudy';
+            } else if (description.indexOf('sunny') > 0) {
+                document.body.className = 'sunny';
+            } else {
+                document.body.className = 'clear';
+            }
+        }
+        window.onload = function () {
+            weatherBallon(enter_city_id_here);
+        }
+    </script>
+
+</body>
+</html>

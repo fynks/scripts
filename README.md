@@ -1,10 +1,17 @@
-# Scripts catalogue 
+# Scripts catalogue
+
  This repo provides a simple catalog of various `Javascript` and `PHP` scripts.
 
-| :pill: | Javascripts                                                                               | :cyclone: | PHP                                                                                          |
-| ------ |:-----------------------------------------------------------------------------------------:|:---------:|:--------------------------------------------------------------------------------------------:|
-| :pill: | [search](https://github.com/aliglelo/scripts/tree/master/js%20scripts/Search)             | :cyclone: | [php login](https://github.com/aliglelo/scripts/tree/master/php%20scripts/php%20login)       |
-| :pill: | [Counter](https://github.com/aliglelo/scripts/tree/master/js%20scripts/Table%20counter)   | :cyclone: | [IP Logger](https://github.com/aliglelo/scripts/tree/master/php%20scripts/php%20ip%20logger) |
-| :pill: | [Json to html](https://github.com/aliglelo/scripts/tree/master/js%20scripts/json-to-html) |           |                                                                                              |
----
-All rights reserved 2020 &copy;  Aliglelo 
+### Javascript :
+- [Covid-API]()
+- [Github-user-repos]()
+- [Weather-API]()
+- [Json data to html elements]()
+- [Filter table]()
+- [Multi table filter]()
+- [Table counter]()
+- [URL jump box]()
+
+### PHP :
+- [IP logger]()
+- [Login system]()

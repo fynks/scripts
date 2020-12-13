@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<link rel=preload href=./data.json as=fetch crossorigin=anonymous>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<title>Title here</title>
+<style media=screen>*{box-sizing:border-box;text-align:center}body{background-color:#0ff}.card{box-shadow:0 2px 4px 0 rgba(0,0,0,.2);margin:10px auto;max-width:350px;background-color:#fff;border-radius:30px;padding:8px}input{box-shadow:0 8px 12px 0 rgba(0,0,0,.2);margin:10px auto;background-color:#fff;border-radius:30px;padding:12px;width:330px;border:0;outline:0}.card:hover{box-shadow:0 8px 12px 0 rgba(0,0,0,.2)}.title{color:orange;font-size:16px}h3{font-weight:100;margin:10px auto}</style>
+</head>
+<body>
+<input type=text name=input value id=myInput onkeyup=searchFunction() placeholder=Search....&#128269; autofocus>
+<div class=main id=main>
+<div class=data-in></div><br>
+</div>
+<script>function http(){this.xhr=new XMLHttpRequest();}
+http.prototype.get=function(t,n){this.xhr.open("GET",t,!0);let e=this;(this.xhr.onload=function(){200==e.xhr.status&&n(e.xhr.responseText);}),this.xhr.send();};const myhttp=new http();myhttp.get("./generate-html-from-json.json",function(t){JSON.parse(t).data.forEach(function(t){document.querySelector(".data-in").innerHTML+=`<div class=card><h3>${t.name}</h3><p class="title">Detail:${t.roll}</p></div>`;});});</script>
+<script>function searchFunction(){const filter=document.querySelector('#myInput').value.toUpperCase();const trs=document.querySelectorAll('#main div:not(.header)');trs.forEach(div=>div.style.display=[...div.children].find(h3=>h3.innerHTML.toUpperCase().includes(filter))?'':'none');}</script>
+</body>
+</html>

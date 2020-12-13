@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang=en>
+<head>
+<link rel="dns-prefetch" href="https://disease.sh/">
+<link rel="preconnect" href="https://disease.sh/">
+<meta charset=utf-8>
+<title>Github-User-Repos | Scripts</title>
+<meta http-equiv=x-ua-compatible content=" ie=edge">
+<meta name=viewport content="width=device-width, initial-scale=1">
+ <style>*{ box-sizing:border-box; text-align:center; font-weight:100;} </style>
+</head>
+<body>
+<div class=repos id=repos>
+<div class=data-in></div>
+<br />
+</div>
+
+    <!-- 
+ 1.Add name in place of `username` in url
+ 2.Use with caution API Rate Limit is only 60 per hour
+ 3.If API rate limit is hit you won't see anything but error will be logged in console
+-->
+    <script>
+        function http() {
+            this.xhr = new XMLHttpRequest();
+        }
+        http.prototype.get = function (t, n) {
+            this.xhr.open("GET", t, !0);
+            let e = this;
+            (this.xhr.onload = function () {
+                200 == e.xhr.status && n(e.xhr.responseText);
+            }), this.xhr.send();
+        };
+        const myhttp = new http();
+        myhttp.get("https://api.github.com/users/username/repos", function (t) {
+            JSON.parse(t).forEach(function (t) {
+                document.querySelector(".data-in").innerHTML +=
+                    `<div class=card><h3>${t.name}</h3><p><a href=${t.html_url}>View</a></p></div>`;
+            });
+        });
+    </script>
+</body>
+</html>
