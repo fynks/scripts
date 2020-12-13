@@ -21,7 +21,7 @@
                 <h2>Active :<span href=# id=active>---</span></h2>
             </div>
     <script>
-        let API = "https://disease.sh/v3/covid-19/countries/pakistan"
+        let API = "https://disease.sh/v3/covid-19/countries/us"
         async function getDataOf(countryName) {
             let URL = `${API}`;
             console.log('fetching data from', URL);
@@ -44,7 +44,7 @@
                 updateData(countryData.todayCases, countryData.todayDeaths, countryData.active)
             }
         }
-        let countryName = "Pakistan";
+        let countryName = "us";
         main();
     </script>
 </body>
