@@ -1,4 +1,4 @@
-# Scripts catalogue
+# :package: Scripts catalogue
 
  This repo provides a simple catalog of various `Javascript` and `PHP` scripts.
 
