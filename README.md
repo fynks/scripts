@@ -13,6 +13,10 @@
 - [URL jump box](https://raw.githubusercontent.com/fynks/scripts/master/js%20scripts/misc/url-juml-box.html)
 
 ### :cyclone: PHP :
+🕯️ Most of them work just by including following in the head of html/php document :
+ ```php
+ <?php include'script_name.php';?>
+ ```
 - [IP logger](https://github.com/fynks/scripts/tree/master/php%20scripts/php%20ip%20logger)
 - [Login system](https://github.com/fynks/scripts/tree/master/php%20scripts/php%20login)
 - [Compressor](https://github.com/fynks/scripts/blob/master/php%20scripts/compressor/compressor.php)
