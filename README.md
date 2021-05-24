@@ -15,3 +15,6 @@
 ### :cyclone: PHP :
 - [IP logger](https://github.com/fynks/scripts/tree/master/php%20scripts/php%20ip%20logger)
 - [Login system](https://github.com/fynks/scripts/tree/master/php%20scripts/php%20login)
+- [Compressor](https://github.com/fynks/scripts/blob/master/php%20scripts/compressor/compressor.php)
+- [Enconder](https://github.com/fynks/scripts/tree/master/php%20scripts/enconder)
+- [UserInfo](https://github.com/fynks/scripts/tree/master/php%20scripts/userinfo)
